@@ -2,7 +2,7 @@ import { PrimaryGeneratedColumn, VersionColumn, CreateDateColumn, UpdateDateColu
 import { Exclude } from 'class-transformer';
 import { ApiHideProperty } from '@nestjs/swagger';
 import { CrudValidationGroups } from '@nestjsx/crud';
-import { IsDefined, IsEmpty, IsOptional } from 'class-validator';
+import { IsDefined, IsOptional } from 'class-validator';
 
 export abstract class BaseEntity {
   @PrimaryGeneratedColumn('increment')
