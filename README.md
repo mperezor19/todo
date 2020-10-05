@@ -2,57 +2,22 @@
 
 ## Description
 
-- Configuration by environment - 
-- Persistence in a sqlite databse - 
-- CORS + security headers -
-- OpenAPI following a code first approach - 
-- Authentication with JWT, all endpoints require authentication - 
-- CRUD for todos -
-- The Todo entity -
-  - id: bigint -
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
+- Configuration by environment 
+- Persistence in a sqlite databse 
+- CORS + security headers
+- OpenAPI following a code first approach 
+- Authentication with JWT, all endpoints require authentication 
+- CRUD for todos
+- The Todo entity 
+  - id: bigint
+  - version: int
+  - createdAt: string (JSON date)
+  - updatedAt: string (JSON date)
+  - description: text
+  - priority: int
+  - completed: boolean
+  - userId: bigint (references to User.id)
+- The parameters version, createdAt and updatedAt should be excluded when we send a response to the client.
+- All parameters must be validated
+- An user can only read, create, update and delete its own todos
+- Custom endpoint: toggle/id. It should toggle the completed status of a todo.
